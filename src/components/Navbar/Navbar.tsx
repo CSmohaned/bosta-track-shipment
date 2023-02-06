@@ -73,7 +73,7 @@ function Navbar() {
                          <Link to="/" className='text-[#e30613] hover:text-white hover:bg-[#e30613] text-sm font-latoBold border py-4 px-7 border-[#e30613] rounded-full'><span className="hover:border-b-white hover:border-b">Sign Up</span></Link>
                        </li>
                        {navbar && (
-                        <div className="flex flex-col justify-center items-center w-screen">
+                        <div className="flex flex-col justify-center items-center">
                            <li className="py-2 px-10 mb-8">
                          <Link to="/" className='text-[#e30613] hover:text-white text-sm font-latoBold border py-4 px-40 border-black rounded-full'><span className="text-[#4f5665] hover:text-[#e30613] text-sm font-latoBold hover:border-b-2 hover:border-b-[#e30613]">Sign In</span></Link>
                        </li>
@@ -120,7 +120,7 @@ function Navbar() {
                     </button>
                 </div>
     </nav>
-    <div className="fixed bottom-2 right-2 border rounded-b-3xl rounded-tl-3xl rounded-tr-sm py-3 px-3 bg-[#e30613]">
+    <div className="fixed bottom-2 right-2 border rounded-b-3xl rounded-tl-3xl rounded-tr-sm py-3 px-3 bg-[#e30613] z-20">
     <ChatBubbleLeftIcon className="w-6 h-6 text-white"/>
     </div>
     {/* {darkMode ? (<SunIcon className="fixed right-1 top-1/2 h-6 w-6 text-blue-500" onClick={()=> setDarkMode(false)}/>) : 

@@ -11,7 +11,7 @@ function TrackShipment ()  {
   const [error, setError] = useState<any>(false);
   const [loading, setLoading] = useState<boolean>(false);
   function handleClick(e:any): void{
-    // e.preventDefault();
+    e.preventDefault();
     setId('');
     navigate(`/search/${id}`);
   }
@@ -30,7 +30,7 @@ function TrackShipment ()  {
     }
     } 
     getData();
-  }, [params.id,id])
+  }, [params.id])
   function getDayDiff(startDate: Date, endDate: Date): number {
     const msInDay = 24 * 60 * 60 * 1000;
   
@@ -38,9 +38,6 @@ function TrackShipment ()  {
       Math.abs(Number(endDate) - Number(startDate)) / msInDay
     );
   }
-  console.log(data);
-  console.log(loading);
-  console.log(error);
   return (
     <div className='flex flex-col justify-center items-center'>
        <div className="flex flex-col justify-start items-center p-10 mb-5">
@@ -52,7 +49,6 @@ function TrackShipment ()  {
       </div>
       <div className='flex flex-col justify-center items-center w-full'>
         <p className='mb-6 sm:hidden'>Shipment No. {params.id}</p>
-
         <div className="flex flex-col justify-center items-center w-full">
         {(!loading && error) && <div className='p-4 bg-[#fef3f2] border border-[#fecdca] w-1/2 text-sm flex flex-row mb-10 sm:w-11/12'><ExclamationTriangleIcon className="w-6 h-6 text-red-700  mr-3"/><span className='inline-block'>No record of this tracking number can be found at this time, please check the number and try again later. For further assistance, please contact Customer Service.</span></div>}  
         {(!loading && !error) && (

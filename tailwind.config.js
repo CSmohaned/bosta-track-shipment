@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      scale: {
+        '500': '2.5',
+        '200': '1.7'
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         poppinsSemiBold: ['PoppinsSemiBold','sans-serif'],
@@ -14,7 +18,9 @@ module.exports = {
         'hero-left': "url('./assets/images/left-blue.svg')",
         'hero-right': "url('./assets/images/blue-right.svg')",
         'pink-left':"url('./assets/images/pink-left.svg')",
-        'pink-right':"url('./assets/images/pink-right.svg')"
+        'pink-right':"url('./assets/images/pink-right.svg')",
+        'person1':"url('./assets/images/person.png')",
+        'person2':"url('./assets/images/person2.png')"
       },
       hidden: ["group-hover"]
     },
