@@ -3,6 +3,16 @@ import {ChevronDownIcon,ChevronRightIcon,MagnifyingGlassIcon} from "@heroicons/r
 import { useNavigate } from 'react-router-dom';
 import { useState,useEffect } from "react";
 import {Link} from "react-router-dom";
+import { motion } from 'framer-motion';
+const modal = {
+  hidden: {
+      opacity: 0,
+  },
+  visible: {
+      opacity: 1,
+      transition: {ease: 'easeInOut',duration: 2}
+  }
+}
 
 function Navbar() {
   const navigate  = useNavigate();
@@ -120,9 +130,10 @@ function Navbar() {
                     </button>
                 </div>
     </nav>
-    <div className="fixed bottom-2 right-2 border rounded-b-3xl rounded-tl-3xl rounded-tr-sm py-3 px-3 bg-[#e30613] z-20">
+    <motion.div variants={modal}  initial="hidden"
+        animate="visible" className="fixed bottom-2 right-2 border rounded-b-3xl rounded-tl-3xl rounded-tr-sm py-3 px-3 bg-[#e30613] z-20">
     <ChatBubbleLeftIcon className="w-6 h-6 text-white"/>
-    </div>
+    </motion.div>
     {/* {darkMode ? (<SunIcon className="fixed right-1 top-1/2 h-6 w-6 text-blue-500" onClick={()=> setDarkMode(false)}/>) : 
     (<MoonIcon className="fixed right-1 top-1/2 h-6 w-6 text-blue-500" onClick={()=> setDarkMode(true)}/>)} */}
     </>
